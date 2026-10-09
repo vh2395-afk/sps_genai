@@ -3,8 +3,10 @@ from pydantic import BaseModel
 
 from app.bigram_model import BigramModel
 from app.embedding_model import EmbeddingModel
+from app.classifier_router import router as classifier_router   # ← add (line 6)
 
 app = FastAPI()
+app.include_router(classifier_router)                            # ← add (right after app = FastAPI())
 
 # Sample corpus for the bigram model
 corpus = [
