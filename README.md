@@ -39,3 +39,16 @@ curl -X POST http://127.0.0.1:8000/embedding \
   -H "Content-Type: application/json" \
   -d '{"word": "king"}'
 ```
+## Assignment 2: CIFAR-10 CNN Classifier
+
+Train the model (weights are already included in `models/cifar10_cnn.pth`):
+    uv run python train_cnn.py
+
+Run the API:
+    uv run uvicorn app.main:app --reload
+
+Endpoints:
+- `GET /classifier/classes`: list of the 10 CIFAR-10 classes
+- `POST /classifier/predict`: upload an image, returns top-k predictions
+
+Test accuracy after 10 epochs: 69.5%
