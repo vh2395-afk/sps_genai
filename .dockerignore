@@ -1,9 +1,10 @@
 .venv
+.venv/
 __pycache__/
 *.pyc
 .git
 .DS_Store
 data/
-.venv/
-__pycache__/
+samples/
 .ipynb_checkpoints/
+*.ipynb
