@@ -5,10 +5,13 @@ from app.bigram_model import BigramModel
 from app.embedding_model import EmbeddingModel
 from app.classifier_router import router as classifier_router
 from app.gan_router import router as gan_router
+from app.image_gen_router import diffusion_router, ebm_router
 
 app = FastAPI()
 app.include_router(classifier_router)
 app.include_router(gan_router)
+app.include_router(diffusion_router)
+app.include_router(ebm_router)
 
 # Sample corpus for the bigram model
 corpus = [
